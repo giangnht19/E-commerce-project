@@ -17,6 +17,11 @@
     font-size: 38px;
 }
 
+.nav-logo a{
+    text-decoration: none;
+    color: inherit;
+}
+
 .nav-menu{
     display: flex;
     align-items: center;

@@ -9,9 +9,10 @@ const Navbar = () => {
 
   return (
     <div className='navbar'>
-      <div className="nav-logo">
-        <img src={logo} alt="logo" />
-        <p>FashionFrenzy</p>
+      <div className="nav-logo" onClick={() => { setMenu("shop") }}>
+        <Link to='/'><img src={logo} alt="logo" /></Link>
+        
+        <p className="nav-logo" onClick={() => { setMenu("shop") }}><Link to='/'>FashionFrenzy</Link></p>
       </div>
       <ul className="nav-menu">
         <li onClick={() => { setMenu("shop") }}>
