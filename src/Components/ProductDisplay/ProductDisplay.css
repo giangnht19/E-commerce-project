@@ -86,7 +86,7 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 200px;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
 }
 .product-display-right button:hover {
     background-color: #2980b9; /* Darker shade of blue on hover */
