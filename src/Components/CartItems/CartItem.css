@@ -1,0 +1,125 @@
+.cart-item{
+    margin: 100px 170px;
+}
+.cart-item hr{
+    height: 3px;
+    background: #e2e2e2;
+    border: 0;
+}
+.cart-item-format-main{
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
+    align-items: center;
+    gap: 75px;
+    padding: 20px 0px;
+    color: #454545;
+    font-size: 18px;
+    font-weight: 600;
+}
+.cart-item-format{
+    font-size: 17px;
+    font-weight: 500;
+}
+.carticon-product-icon{
+    height: 62px;
+}
+.cart-item-add-icon{
+    width: 15px;
+    margin: 0px 40px;
+    cursor: pointer;
+    transform: rotate(45deg);
+}
+.cart-item-add-icon:hover{
+    opacity: 0.8;
+    transform: rotate(405deg);
+    transition: 1s;
+}
+.cart-item-remove-icon{
+    width: 15px;
+    margin: 0px 40px;
+    cursor: pointer;
+}   
+.cart-item-remove-icon:hover{
+    opacity: 0.8;
+    transform: rotate(360deg);
+    transition: 1s;
+}
+.cart-item-quantity{
+    width: 64px;
+    height: 50px;
+    border: 2px solid #ebebeb;
+    background: white;
+    border-radius: 5px;
+}
+.cart-item-quantity:hover {
+    background-color: #ebebeb;
+    cursor: pointer;
+}
+.cart-item-down{
+    display: flex;
+    margin: 100px 0px;
+}
+.cart-item-total{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 200px;
+    gap: 40px;
+}
+.cart-item-total-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0px; 
+}
+.cart-item-total button{
+    width: 262px;
+    height: 58px;
+    outline: none;
+    border: none;
+    background: #Ffd700;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.cart-item-total button:hover{
+    background-color: #F0CA7F;
+    transition: 0.3s;
+}
+.cart-item-promocode{
+    flex: 1;
+    font-size: 16px;
+    font-weight: 500;
+}
+.cart-item-promocode p{
+    color: #555;
+}
+.cart-item-promobox{
+    width: 504px;
+    margin-top: 15px;
+    padding-left: 20px;
+    height: 58px;
+    background: #eaeaea;
+}
+.cart-item-promobox input{
+    width: 330px;
+    height: 50px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+}
+.cart-item-promobox button{
+    width: 170px;
+    height: 58px;
+    font-size: 16px;
+    background: black;
+    color: white;
+    cursor: pointer;
+}
+.cart-item-promobox button:hover{
+    background-color: #333;
+    transition: 0.3s;
+    border: none;
+}
