@@ -23,6 +23,12 @@
 .carticon-product-icon{
     height: 62px;
 }
+.carticon-product-icon:hover{           
+    opacity: 0.8;
+    /* transform: rotateY(360deg); */
+    transition: 1s;
+    cursor: pointer;
+}
 .cart-item-add-icon{
     width: 15px;
     margin: 0px 40px;
@@ -32,7 +38,7 @@
 .cart-item-add-icon:hover{
     opacity: 0.8;
     transform: rotate(405deg);
-    transition: 1s;
+    transition: 0.5s;
 }
 .cart-item-remove-icon{
     width: 15px;
@@ -42,7 +48,7 @@
 .cart-item-remove-icon:hover{
     opacity: 0.8;
     transform: rotate(360deg);
-    transition: 1s;
+    transition: 0.5s;
 }
 .cart-item-quantity{
     width: 64px;
@@ -52,7 +58,9 @@
     border-radius: 5px;
 }
 .cart-item-quantity:hover {
-    background-color: #ebebeb;
+    background: white;  
+    /* transform: rotateX(360deg); */
+    transition: 0.5s;
     cursor: pointer;
 }
 .cart-item-down{
@@ -119,7 +127,7 @@
     cursor: pointer;
 }
 .cart-item-promobox button:hover{
-    background-color: #333;
+    background-color: grey;
     transition: 0.3s;
     border: none;
 }

@@ -75,6 +75,10 @@
     font-weight: 600; 
     cursor: pointer;      
 }
+.product-display-right-sizes div:active{
+    background: #656565;
+    color: #fbfbfb;
+}
 .product-display-right button {
     padding: 20px 40px;
     background-color: #3498db; /* Blue color */
@@ -89,7 +93,10 @@
     margin-bottom: 25px;
 }
 .product-display-right button:hover {
-    background-color: #2980b9; /* Darker shade of blue on hover */
+    background-color: #3498db; /* Darker shade of blue on hover */
+}
+.product-display-right button:active {
+    background-color: #166092; /* Darker shade of blue on click */
 }
 .product-display-right-category{
     margin-top: 10px;
