@@ -186,13 +186,16 @@ a {
 @media (max-width: 800px) {
   .navbar {
     padding: 12px 30px;
+    gap: 20px;
   }
 
   .nav-menu {
-    gap: 25px;
+    gap: 8px;
+  }
+  .nav-menu li a{
+    font-size: 20px;
     font-weight: 500;
   }
-
   .nav-login-cart button {
     width: auto;
     padding: 11px 16px;
@@ -210,7 +213,12 @@ a {
     display: none;
     width: auto;
   }
-
+  .navbar{
+    gap: 10px;
+  }
+  .nav-logo p{
+    margin-left: -10px;
+  }
   .menu-icon {
     display: flex;
   }
@@ -255,14 +263,14 @@ a {
   }
 
   .nav-login-cart button {
-    font-size: 20px;
-    padding: 10px 14px;
+    font-size: 12px;
+    padding: 8px 12px;
   }
 
   .nav-cart-count {
-    font-size: 13px;
-    width: 15px;
-    height: 15px;
+    font-size: 12px;
+    width: 14px;
+    height: 14px;
   }
   .nav-menu li {
     font-size: 20px;
@@ -275,5 +283,9 @@ a {
     font-size: 13px;
     width: 15px;
     height: 15px;
+  }
+  .nav-login-cart{
+    gap: 7px;
+    margin: 0;
   }
 }
