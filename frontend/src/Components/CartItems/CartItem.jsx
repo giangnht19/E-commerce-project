@@ -25,7 +25,7 @@ const CartItem = () => {
                             <img src={item.image} alt="" className='carticon-product-icon' />
                             <p className='cart-item-name'>{item.name}</p>
                             <p>${item.new_price}</p>
-                            <button className='cart-item-quantity'>{cartItems[item.id]}</button>
+                            <p className='cart-item-quantity'>{cartItems[item.id]}</p>
                             <p>${item.new_price*cartItems[item.id]}</p>
                             <img className='cart-item-add-icon' src={remove_icon} onClick={() => {addToCart(item.id)}} alt="" />
                             <img className='cart-item-remove-icon' src={remove_icon} onClick={() => {removeFromCart(item.id)}} alt="" />
