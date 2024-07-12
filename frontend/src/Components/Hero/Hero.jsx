@@ -4,7 +4,7 @@ import hand_icon from '../Assets/hand_icon.png'
 import arrow_icon from '../Assets/arrow.png'
 import hero_img from '../Assets/hero_image.png'
 
-const Hero = ({ scrollToNewCollections }) => {
+const Hero = ({ scrollToSection, sectionRef }) => {
   return (
     <div className='hero'>
         <div className="hero-left">
@@ -17,7 +17,10 @@ const Hero = ({ scrollToNewCollections }) => {
                 <p>collection</p>
                 <p>for everyone</p>
             </div>
-            <div className="hero-lastest-btn" onClick={scrollToNewCollections}>
+            <div className="hero-lastest-btn" onClick={() => {
+                sectionRef.current = document.querySelector('.new-collections');
+                scrollToSection();
+            }}>
                 <div>Lastest Collection</div>
                 <img src={arrow_icon} alt="arrow_icon" />
             </div>

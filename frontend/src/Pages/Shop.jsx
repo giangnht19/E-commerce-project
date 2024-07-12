@@ -6,23 +6,23 @@ import NewCollections from '../Components/NewCollections/NewCollections';
 import NewsLetter from '../Components/NewsLetter/NewsLetter';
 
 const Shop = () => {
-  const newCollectionsRef = useRef(null);
+  const sectionRef = useRef(null);
 
-  const scrollToNewCollections = () => {
-    if (newCollectionsRef.current) {
-      newCollectionsRef.current.scrollIntoView({ behavior: 'smooth' });
+  const scrollToSection = (section) => {
+    if (section && section.current) {
+      section.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
     <div>
-      <Hero scrollToNewCollections={scrollToNewCollections} />
+      <Hero scrollToSection={() => scrollToSection(sectionRef)} sectionRef={sectionRef} />
       <Popular />
-      <Offers />
-      <div ref={newCollectionsRef}>
+      <Offers scrollToSection={() => scrollToSection(sectionRef)} sectionRef={sectionRef} />
+      <div ref={sectionRef}>
         <NewCollections />
+        <NewsLetter />
       </div>
-      <NewsLetter />
     </div>
   );
 };
