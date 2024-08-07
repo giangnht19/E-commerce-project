@@ -130,3 +130,106 @@ app.get("/allproducts", async (req, res) => {
     console.log("All Products Fetched Successfully");
     res.send(products);
 })
+
+// Schema creating for user module
+const userSchema = mongoose.model("user", {
+    username: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    cartData: {
+        type: Object,
+    },
+    date: {
+        type: Date,
+        default: Date.now
+    }
+})
+
+// Creating Endpoint for registering user
+app.post("/register", async (req, res) => {
+    
+    let check = await userSchema.findOne({ email: req.body.email });
+    if (check) {
+        return res.status(400).json({
+            success: false,
+            message: "Email already exists"
+        })
+    };
+
+    let checkUsername = await userSchema.findOne({ username: req.body.username });
+    if (checkUsername) {
+        return res.status(400).json({
+            success: false,
+            message: "Username already exists"
+        })
+    };
+
+    let cart = {};
+    for (let i = 0; i < 300; i++) {
+        cart[i] = 0;
+    };
+    const user = new userSchema({
+        username: req.body.username,
+        email: req.body.email,
+        password: req.body.password,
+        cartData: cart
+    });
+
+    await user.save();
+
+    const data = {
+        user: {
+            id: user.id
+        }
+    }
+
+    const authToken = jwt.sign(data, "secret_ecom")
+    res.json({
+        success: true,
+        message: "User registered successfully",
+        token: authToken
+    })
+})
+
+// Creating Endpoint for login user
+app.post("/login", async (req, res) => {
+    let user = await userSchema.findOne({ email: req.body.email });
+    if (user) {
+        if (req.body.password === user.password) {
+            const data = {
+                user: {
+                    id: user.id
+                }
+            }
+            const authToken = jwt.sign(data, "secret_ecom");
+            res.json({
+                success: true,
+                message: "User logged in successfully",
+                token: authToken
+            })
+        }
+        else {
+            res.json({
+                success: false,
+                message: "Wrong Password"
+            })
+        }
+    }
+    else {
+        res.json({
+            success: false,
+            message: "Wrong Email"
+        })
+    }
+})
